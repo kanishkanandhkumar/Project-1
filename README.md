@@ -27,6 +27,8 @@ The model utilizes a hybrid architecture of Graph Convolutional Networks (GCNs) 
 ├── docs/               # Technical documentation and research notes
 ├── LICENSE             # MIT License
 └── README.md           # Project documentation
+
+
 Setup & Installation
 Bash
 # Clone the repository
@@ -34,18 +36,9 @@ git clone [https://github.com/kanishkanandhkumar/Project-1.git](https://github.c
 
 # Install dependencies
 pip install torch torch_geometric pandas scikit-learn
+
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Citation
 If you utilize this framework for your research, please cite the repository accordingly.
-
-
----
-
-### Next steps to ensure this is "Portfolio Ready":
-1.  **Remove the Data:** Ensure your `data/` folder is listed in a `.gitignore` file so you don't commit large datasets (which causes push errors).
-2.  **Add a `requirements.txt`:** Run `pip freeze > requirements.txt` so others can replicate your environment exactly.
-3.  **Final Polish:** Replace the placeholder `` tags with your actual saved results if you have them, or keep them as descriptive text links for your repository's visual documentation.
-
-**Does this project name and structure align with your vision for your MS applications?**
