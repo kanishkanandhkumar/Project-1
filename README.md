@@ -1,23 +1,51 @@
-# Project-1
-# Gene Prioritizer GNN
+# Graph-OncoPriority
 
-This repository contains the implementation of a Graph Neural Network (GNN) pipeline designed for oncogene prioritization. The model utilizes the human protein-protein interaction (PPI) network to identify genes critical to cancer pathogenesis.
-
-## Technical Architecture
-The model integrates structural topology with node classification to predict gene-disease associations.
+Graph-OncoPriority is a computational framework leveraging Graph Neural Networks (GNNs) to identify potential oncogenes by analyzing the structural topology of the human protein-protein interaction (PPI) network. By modeling gene-disease associations as a node classification problem, this project captures functional dependencies often overlooked by traditional statistical methods.
 
 
 
-## Performance Metrics
-- **ROC-AUC:** 0.9347
-- **Model Architecture:** Hybrid GCN/GAT
-- **Interpretability:** GNNExplainer for feature importance mapping
+## Research Objective
+The goal is to accurately prioritize candidate oncogenes within large-scale protein interactomes. This framework provides a scalable approach to biomarker discovery and therapeutic target identification.
 
-## Implementation Details
-The project utilizes PyTorch Geometric to perform message passing across the STRING interactome. Security constraints are handled via `weights_only=False` for graph data structures, ensuring robust serialization.
+## Methodology
+The model utilizes a hybrid architecture of Graph Convolutional Networks (GCNs) and Graph Attention Networks (GATs) to perform message passing across the STRING protein interactome.
 
-## License
+1. **Data Preprocessing:** Integration of high-confidence interaction networks and gene feature extraction.
+2. **Model Architecture:** Implementation of multi-layer GNNs designed to aggregate neighborhood structural features.
+3. **Interpretability:** Integration of GNNExplainer to decompose model predictions and map critical interactions to canonical signaling pathways.
+
+## Key Performance Metrics
+* **ROC-AUC:** 0.9347
+* **Framework:** PyTorch Geometric
+* **Explainability:** Node-level subgraph feature importance mapping
+
+## Repository Structure
+```text
+├── data/               # Raw PPI datasets and preprocessed graph snapshots
+├── results/            # Performance metrics, model weights, and visualizations
+├── src/                # Core implementation (training, evaluation, explainability)
+├── docs/               # Technical documentation and research notes
+├── LICENSE             # MIT License
+└── README.md           # Project documentation
+Setup & Installation
+Bash
+# Clone the repository
+git clone [https://github.com/kanishkanandhkumar/Project-1.git](https://github.com/kanishkanandhkumar/Project-1.git)
+
+# Install dependencies
+pip install torch torch_geometric pandas scikit-learn
+License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Contact
-For inquiries regarding the research methodology or technical implementation, please contact the lead researcher.
+Citation
+If you utilize this framework for your research, please cite the repository accordingly.
+
+
+---
+
+### Next steps to ensure this is "Portfolio Ready":
+1.  **Remove the Data:** Ensure your `data/` folder is listed in a `.gitignore` file so you don't commit large datasets (which causes push errors).
+2.  **Add a `requirements.txt`:** Run `pip freeze > requirements.txt` so others can replicate your environment exactly.
+3.  **Final Polish:** Replace the placeholder `` tags with your actual saved results if you have them, or keep them as descriptive text links for your repository's visual documentation.
+
+**Does this project name and structure align with your vision for your MS applications?**
